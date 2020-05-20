@@ -15,12 +15,7 @@ class String
   end
 
   def count_sentences
-    sentence_count = self.delete(",")
-    puts sentence_count
-    if sentence_count.delete(" ").split(/[". ", "! ", "? "]/).length > 4
-      sentence_count.delete(" ").split(/[". ", "! ", "? "]/).length-1
-    else
-      sentence_count.delete(" ").split(/[". ", "! ", "? "]/).length
-    end
+    sentence_count = self.squeeze("!")
+    sentence_count.delete(" ").split(/[.!?]/).length
   end
 end
