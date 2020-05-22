@@ -1,20 +1,35 @@
-require 'pry'
+#require 'pry'
 
 class String
 
   def sentence?
-    
+    if self.end_with?(".")
+      return true
+    else 
+      return false
+    end
   end
 
   def question?
-
+    if self.end_with?("?")
+      return true
+    else
+      return false
+    end
   end
 
   def exclamation?
-
+    if self.end_with?("!")
+      return true
+    else
+      return false
+    end
   end
-
+  
   def count_sentences
-
+   # return self.scan(/[^\.!?]+[\.!?]/).map(&:strip).count
+   sentence_array = self.split(/[.?!]/).reject {|string| string.empty?}
+   #self.split(/[.?!+]/)
+   return sentence_array.count
   end
 end
