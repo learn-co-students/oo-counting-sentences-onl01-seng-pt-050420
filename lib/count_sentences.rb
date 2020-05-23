@@ -27,9 +27,10 @@ class String
     end
 
   end
-
   def count_sentences
     self.squeeze.split(/\.\!\?/).join.count(".!?")
-    
+
   end
+
+  
 end
